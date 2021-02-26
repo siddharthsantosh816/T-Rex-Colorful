@@ -161,9 +161,10 @@ function spawnObstacles() {
   var fCount;
   if(score < 250) {
     fCount = 80;
-   else {
-     fCount = 60;
-   }
+  }
+  if(score >= 250) {
+    fCount = 60;
+  }
   if(frameCount % fCount === 0) {
     var obstacle = createSprite(width-50,height-50,10,40);
      obstacle.velocityX = -(6 + 3*score/100);
