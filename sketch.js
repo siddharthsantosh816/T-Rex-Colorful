@@ -46,12 +46,12 @@ function setup() {
   sun.addImage(sunImg);
   sun.scale = 0.09;
   
-  ground = createSprite(width/2,height-15,width,10);
+  ground = createSprite(width/2,height-80,width,10);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   ground.velocityX = -(6 + 3*score/100);
   
-  trex = createSprite(width/10,height-height/7,15,50);
+  trex = createSprite(width/10,height-,15,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
   trex.scale = height/450;
@@ -158,7 +158,7 @@ function spawnClouds() {
 
 function spawnObstacles() {
   if(frameCount % 70 === 0) {
-    var obstacle = createSprite(width-5,height-60,10,40);
+    var obstacle = createSprite(width-5,height-80,10,40);
      obstacle.velocityX = -(6 + 3*score/100);
     
     obstacle.scale = height/600;
