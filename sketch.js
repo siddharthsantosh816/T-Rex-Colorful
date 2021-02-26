@@ -165,7 +165,7 @@ function spawnObstacles() {
      fCount = 60;
    }
   if(frameCount % fCount === 0) {
-    var obstacle = createSprite(width-5,height-50,10,40);
+    var obstacle = createSprite(width-50,height-50,10,40);
      obstacle.velocityX = -(6 + 3*score/100);
     
     obstacle.scale = height/750;
