@@ -29,7 +29,6 @@ function preload(){
   
   obstacle1 = loadImage("obstacle1.png");
   obstacle2 = loadImage("obstacle2.png");
-  obstacle3 = loadImage("obstacle3.png");
   obstacle4 = loadImage("obstacle4.png");
       
   gameOverImg = loadImage("gameOver.png");
@@ -134,7 +133,7 @@ function draw() {
 function spawnClouds() {
   //write code here to spawn the clouds
   if (frameCount % 80 === 0) {
-    var cloud = createSprite(50,height/3,40,10);
+    var cloud = createSprite(width,height/3,40,10);
     cloud.y = Math.round(random(height/2,height/10));
     cloud.addImage(cloudImage);
     cloud.scale = random(height/1000,4*height/1000);
@@ -165,22 +164,19 @@ function spawnObstacles() {
     
     obstacle.scale = height/600;
     //generate random obstacles
-    var rand = Math.round(random(1,4));
+    var rand = Math.round(random(1,3));
     switch(rand) {
       case 1: obstacle.addImage(obstacle1);
               obstacle.scale = 0.8;
               break;
       case 2: obstacle.addImage(obstacle2);
               break;
-      case 3: obstacle.addImage(obstacle3);
-              break;
-      case 4: obstacle.addImage(obstacle4);
-              break;
+      case 3: obstacle.addImage(obstacle4);
+              break; 
       default: break;
     }
     
     //assign scale and lifetime to the obstacle           
-    
     obstacle.lifetime = 300;
     //add each obstacle to the group
     obstaclesGroup.add(obstacle);
