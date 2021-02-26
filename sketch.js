@@ -93,7 +93,7 @@ function draw() {
       touches = [];
     }
   
-    trex.velocityY = trex.velocityY + 0.9;
+    trex.velocityY = trex.velocityY + 0.95;
   
     if (ground.x < 0){
       ground.x = ground.width/2;
@@ -142,7 +142,7 @@ function spawnClouds() {
     cloud.velocityX = -3;
     
      //assign lifetime to the variable
-    cloud.lifetime = 400;
+    cloud.lifetime = 500;
     
     //adjust the depth
     cloud.depth = trex.depth;
