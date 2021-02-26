@@ -51,7 +51,7 @@ function setup() {
   ground.x = ground.width /2;
   ground.velocityX = -(6 + 3*score/100);
   
-  trex = createSprite(width/10,height-,15,50);
+  trex = createSprite(width/10,height-90,15,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
   trex.scale = height/450;
