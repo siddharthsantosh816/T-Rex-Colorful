@@ -31,8 +31,7 @@ function preload(){
   obstacle2 = loadImage("obstacle2.png");
   obstacle3 = loadImage("obstacle3.png");
   obstacle4 = loadImage("obstacle4.png");
-  obstacle5 = loadImage("obstacle5.png");
-    
+      
   gameOverImg = loadImage("gameOver.png");
   
   restartImg = loadImage("restart.png");
@@ -47,7 +46,7 @@ function setup() {
   sun.addImage(sunImg);
   sun.scale = 0.09;
   
-  ground = createSprite(width/2,height-20,width,10);
+  ground = createSprite(width/2,height-15,width,10);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   ground.velocityX = -(6 + 3*score/100);
@@ -70,7 +69,7 @@ function setup() {
   gameOver.visible = false;
   restart.visible = false;
   
-  invisibleGround = createSprite(width/2,height-15,width,10);
+  invisibleGround = createSprite(width/2,height-12,width,10);
   invisibleGround.visible = false;
   
   cloudsGroup = new Group();
@@ -159,12 +158,12 @@ function spawnClouds() {
 
 function spawnObstacles() {
   if(frameCount % 70 === 0) {
-    var obstacle = createSprite(width-5,height-50,10,40);
+    var obstacle = createSprite(width-5,height-60,10,40);
      obstacle.velocityX = -(6 + 3*score/100);
     
     obstacle.scale = height/600;
     //generate random obstacles
-    var rand = Math.round(random(1,5));
+    var rand = Math.round(random(1,4));
     switch(rand) {
       case 1: obstacle.addImage(obstacle1);
               obstacle.scale = 0.8;
@@ -174,8 +173,6 @@ function spawnObstacles() {
       case 3: obstacle.addImage(obstacle3);
               break;
       case 4: obstacle.addImage(obstacle4);
-              break;
-      case 5: obstacle.addImage(obstacle5);
               break;
       default: break;
     }
