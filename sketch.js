@@ -89,12 +89,12 @@ function draw() {
     ground.velocityX = -(6 + 3*score/100);
     
     if((touches.length > 0 || keyDown("space")) && trex.y >= (height-height/5)) {
-      trex.velocityY = -13;
+      trex.velocityY = -15;
       jumpSound.play();
       touches = [];
     }
   
-    trex.velocityY = trex.velocityY + 0.85;
+    trex.velocityY = trex.velocityY + 0.9;
   
     if (ground.x < 0){
       ground.x = ground.width/2;
