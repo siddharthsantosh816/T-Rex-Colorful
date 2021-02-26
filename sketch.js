@@ -46,7 +46,7 @@ function setup() {
   sun.addImage(sunImg);
   sun.scale = 0.09;
   
-  ground = createSprite(width/2,height-80,width,10);
+  ground = createSprite(width/2,height-90,width,10);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   ground.velocityX = -(6 + 3*score/100);
@@ -87,7 +87,7 @@ function draw() {
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
     
-    if((touches.length > 0 || keyDown("space")) && trex.y >= (height-height/4)) {
+    if((touches.length > 0 || keyDown("space")) && trex.y >= (height-height/4.5)) {
       trex.velocityY = -14;
       jumpSound.play();
       touches = [];
