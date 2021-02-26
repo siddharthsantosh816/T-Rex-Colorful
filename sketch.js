@@ -87,7 +87,7 @@ function draw() {
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
     
-    if((touches.length > 0 || keyDown("space")) && trex.y >= (height-height/4.5)) {
+    if((touches.length > 0 || keyDown("space")) && trex.y >= (height-height/5)) {
       trex.velocityY = -14;
       jumpSound.play();
       touches = [];
@@ -161,7 +161,7 @@ function spawnClouds() {
 
 function spawnObstacles() {
   if(frameCount % 70 === 0) {
-    var obstacle = createSprite(width-5,height-80,10,40);
+    var obstacle = createSprite(width-5,height-60,10,40);
      obstacle.velocityX = -(6 + 3*score/100);
     
     obstacle.scale = height/600;
