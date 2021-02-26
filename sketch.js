@@ -172,6 +172,7 @@ function spawnObstacles() {
       case 2: obstacle.addImage(obstacle2);
               break;
       case 3: obstacle.addImage(obstacle4);
+              obstacle.scale = 0.85;
               break; 
       default: break;
     }
