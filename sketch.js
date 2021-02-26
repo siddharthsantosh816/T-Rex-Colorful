@@ -92,7 +92,7 @@ function draw() {
       jumpSound.play();
       touches = [];
     }
-    trex.velocityY = trex.velocityY + 0.95;
+    trex.velocityY = trex.velocityY + 0.9;
   
     if (ground.x < 0){
       ground.x = ground.width/2;
@@ -134,7 +134,7 @@ function draw() {
 function spawnClouds() {
   //write code here to spawn the clouds
   if (frameCount % 80 === 0) {
-    var cloud = createSprite(width,height/3,40,10);
+    var cloud = createSprite(50,height/3,40,10);
     cloud.y = Math.round(random(height/2,height/10));
     cloud.addImage(cloudImage);
     cloud.scale = random(height/1000,4*height/1000);
