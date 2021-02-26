@@ -162,7 +162,7 @@ function spawnObstacles() {
     var obstacle = createSprite(width-5,height-50,10,40);
      obstacle.velocityX = -(6 + 3*score/100);
     
-    obstacle.scale = height/600;
+    obstacle.scale = height/700;
     //generate random obstacles
     var rand = Math.round(random(1,3));
     switch(rand) {
