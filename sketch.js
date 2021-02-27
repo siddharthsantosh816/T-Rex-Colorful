@@ -53,7 +53,7 @@ function setup() {
   trex = createSprite(width/10,height-90,15,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
-  trex.scale = width/45;
+  trex.scale = width/500;
   trex.setCollider("rectangle",0,-5,65,60);
   
   gameOver = createSprite(width/2,height/2 - 50);
@@ -81,8 +81,8 @@ function setup() {
 function draw() {
   //trex.debug = true;
   background(170,206,251);
-  text("Score: "+ score, width-80, height/15);
-  text("High Score: "+ localStorage[0], 20, height/15);
+  text("Score: "+ score, width-100, height/15);
+  text("High Score: "+ localStorage[0], 40, height/15);
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
