@@ -58,6 +58,7 @@ function setup() {
   
   gameOver = createSprite(width/2,height/2 - 50);
   gameOver.addImage(gameOverImg);
+  gameOver.scale = 0.001*width;
   
   restart = createSprite(width/2,height/2);
   restart.addImage(restartImg);
@@ -68,7 +69,7 @@ function setup() {
   gameOver.visible = false;
   restart.visible = false;
   
-  invisibleGround = createSprite(width/2,height-12,width,10);
+  invisibleGround = createSprite(width/10,height-32,width,10);
   invisibleGround.visible = false;
   
   cloudsGroup = new Group();
@@ -80,8 +81,8 @@ function setup() {
 function draw() {
   //trex.debug = true;
   background(170,206,251);
-  text("Score: "+ score, width-width/6, height/15);
-  text("High Score: "+ localStorage[0], width/20, height/15);
+  text("Score: "+ score, width-80, height/15);
+  text("High Score: "+ localStorage[0], 20, height/15);
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
@@ -123,7 +124,7 @@ function draw() {
     obstaclesGroup.setLifetimeEach(-1);
     cloudsGroup.setLifetimeEach(-1);
     
-    if(mousePressedOver(restart)) {
+    if(mousePressedOver(restart) || touches.lenghth > 0) {
       reset();
     }
   }
@@ -147,10 +148,10 @@ function spawnClouds() {
     trex.depth = trex.depth + 1;
     
     cloud.depth = gameOver.depth;
-    gameOver.depth = gameOver.depth+1;
+    gameOver.depth = gameOver.depth + 1;
     
     cloud.depth = restart.depth;
-    restart.depth = restart.depth+1;
+    restart.depth = restart.depth + 1;
     
     //add each cloud to the group
     cloudsGroup.add(cloud);
@@ -169,7 +170,7 @@ function spawnObstacles() {
     var obstacle = createSprite(width-50,height-50,10,40);
      obstacle.velocityX = -(6 + 3*score/100);
     
-    obstacle.scale = height/750;
+    obstacle.scale = height/580;
     //generate random obstacles
     var rand = Math.round(random(1,3));
     switch(rand) {
