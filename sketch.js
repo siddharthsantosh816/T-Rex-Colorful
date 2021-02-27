@@ -53,7 +53,7 @@ function setup() {
   trex = createSprite(width/10,height-90,15,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
-  trex.scale = width/500;
+  trex.scale = height/550;
   trex.setCollider("rectangle",0,-5,65,60);
   
   gameOver = createSprite(width/2,height/2 - 50);
