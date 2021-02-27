@@ -50,15 +50,15 @@ function setup() {
   ground.x = ground.width /2;
   ground.velocityX = -(6 + 3*score/100);
   
-  trex = createSprite(width/10,height-90,15,50);
+  trex = createSprite(50,height-90,15,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
-  trex.scale = height/550;
+  trex.scale = height/500;
   trex.setCollider("rectangle",0,-5,65,60);
   
   gameOver = createSprite(width/2,height/2 - 50);
   gameOver.addImage(gameOverImg);
-  gameOver.scale = 0.0002*width;
+  gameOver.scale = 0.0002*height;
   
   restart = createSprite(width/2,height/2);
   restart.addImage(restartImg);
