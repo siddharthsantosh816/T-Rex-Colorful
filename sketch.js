@@ -79,7 +79,7 @@ function setup() {
 function draw() {
   //trex.debug = true;
   background(170,206,251);
-  textSize(14);
+  textSize(15);
   fill("blue");
   text("Score: "+ score, width-120, height/15);
   text("High Score: "+ localStorage[0], 30, height/15);
