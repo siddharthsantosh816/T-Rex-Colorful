@@ -50,7 +50,7 @@ function setup() {
   ground.x = ground.width /2;
   ground.velocityX = -(6 + 3*score/100);
   
-  trex = createSprite(90,height-90,15,50);
+  trex = createSprite(75,height-90,15,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
   //trex.scale = height/450;
@@ -58,12 +58,10 @@ function setup() {
   
   gameOver = createSprite(width/2,height/2 - 50);
   gameOver.addImage(gameOverImg);
-  gameOver.scale = 0.001*width;
+  gameOver.scale = 0.5;
   
   restart = createSprite(width/2,height/2);
   restart.addImage(restartImg);
-    
-  gameOver.scale = 0.8;
   restart.scale = 0.7;
 
   gameOver.visible = false;
@@ -81,8 +79,8 @@ function setup() {
 function draw() {
   //trex.debug = true;
   background(170,206,251);
-  text("Score: "+ score, width-80, height/15);
-  text("High Score: "+ localStorage[0], 20, height/15);
+  text("Score: "+ score, width-90, height/15);
+  text("High Score: "+ localStorage[0], 30, height/15);
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
