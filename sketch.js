@@ -41,11 +41,11 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   
-  sun = createSprite(width-width/5,height/7,10,10);
+  sun = createSprite(width-width/5,height/6,10,10);
   sun.addImage(sunImg);
   sun.scale = 0.09;
   
-  ground = createSprite(width/2,height-35,width,10);
+  ground = createSprite(width/2,height-15,width,10);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   ground.velocityX = -(6 + 3*score/100);
@@ -67,7 +67,7 @@ function setup() {
   gameOver.visible = false;
   restart.visible = false;
   
-  invisibleGround = createSprite(width/10,height-52,width,10);
+  invisibleGround = createSprite(width/10,height-32,width,10);
   invisibleGround.visible = false;
   
   cloudsGroup = new Group();
@@ -87,7 +87,7 @@ function draw() {
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
     
-    if((touches.length > 0 || keyDown("space")) && trex.y >= (height-height/5)) {
+    if((touches.length > 0 || keyDown("space")) && trex.y >= (height-height/6)) {
       trex.velocityY = -15;
       jumpSound.play();
       touches = [];
@@ -167,7 +167,7 @@ function spawnObstacles() {
     fCount = 60;
   }
   if(frameCount % fCount === 0) {
-    var obstacle = createSprite(width-50,height-70,10,40);
+    var obstacle = createSprite(width-50,height-50,10,40);
      obstacle.velocityX = -(6 + 3*score/100);
     
      //generate random obstacles
