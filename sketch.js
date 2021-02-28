@@ -53,12 +53,12 @@ function setup() {
   trex = createSprite(90,height-90,15,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
-  trex.scale = height/460;
+  //trex.scale = height/450;
   trex.setCollider("rectangle",0,-5,65,60);
   
   gameOver = createSprite(width/2,height/2 - 50);
   gameOver.addImage(gameOverImg);
-  gameOver.scale = 0.0001*height;
+  gameOver.scale = 0.001*width;
   
   restart = createSprite(width/2,height/2);
   restart.addImage(restartImg);
@@ -81,8 +81,8 @@ function setup() {
 function draw() {
   //trex.debug = true;
   background(170,206,251);
-  text("Score: "+ score, width-100, height/15);
-  text("High Score: "+ localStorage[0], 40, height/15);
+  text("Score: "+ score, width-80, height/15);
+  text("High Score: "+ localStorage[0], 20, height/15);
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
@@ -170,8 +170,7 @@ function spawnObstacles() {
     var obstacle = createSprite(width-50,height-50,10,40);
      obstacle.velocityX = -(6 + 3*score/100);
     
-    obstacle.scale = height/580;
-    //generate random obstacles
+     //generate random obstacles
     var rand = Math.round(random(1,3));
     switch(rand) {
       case 1: obstacle.addImage(obstacle1);
