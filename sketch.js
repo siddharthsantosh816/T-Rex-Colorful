@@ -41,7 +41,7 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   
-  sun = createSprite(width-width/5,height/8,10,10);
+  sun = createSprite(width-width/5,height/7,10,10);
   sun.addImage(sunImg);
   sun.scale = 0.09;
   
@@ -79,8 +79,8 @@ function setup() {
 function draw() {
   //trex.debug = true;
   background(170,206,251);
-  textSize(15);
-  fill("blue");
+  textSize(16);
+  fill("black");
   text("Score: "+ score, width-120, height/15);
   text("High Score: "+ localStorage[0], 30, height/15);
   if (gameState===PLAY){
