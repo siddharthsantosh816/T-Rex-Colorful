@@ -79,7 +79,8 @@ function setup() {
 function draw() {
   //trex.debug = true;
   background(170,206,251);
-  text("Score: "+ score, width-90, height/15);
+  textSize = 20;
+  text("Score: "+ score, width-100, height/15);
   text("High Score: "+ localStorage[0], 30, height/15);
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
